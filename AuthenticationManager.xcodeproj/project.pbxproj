@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D918763E19803A81005205D1 /* LocalAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = D918763D19803A81005205D1 /* LocalAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D918764419803A81005205D1 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D918763819803A81005205D1 /* LocalAuthentication.framework */; };
-		D918764B19803A81005205D1 /* LocalAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918764A19803A81005205D1 /* LocalAuthenticationTests.swift */; };
+		D918763E19803A81005205D1 /* AuthenticationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D918763D19803A81005205D1 /* AuthenticationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D918764419803A81005205D1 /* AuthenticationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D918763819803A81005205D1 /* AuthenticationManager.framework */; };
+		D918764B19803A81005205D1 /* AuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918764A19803A81005205D1 /* AuthenticationManagerTests.swift */; };
+		D9187659198042F3005205D1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9187658198042F3005205D1 /* Storyboard.storyboard */; };
+		D918765D198043E2005205D1 /* PINAuthentcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918765C198043E2005205D1 /* PINAuthentcationViewController.swift */; };
+		D918766219804BE9005205D1 /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918766119804BE9005205D1 /* AuthenticationDelegate.swift */; };
+		D918766519805188005205D1 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918766419805188005205D1 /* AuthenticationManager.swift */; };
+		D9187667198052E5005205D1 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9187666198052E5005205D1 /* AuthenticationViewController.swift */; };
+		D91876691980543B005205D1 /* AuthentictionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91876681980543B005205D1 /* AuthentictionType.swift */; };
+		D918766B19805FB3005205D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918766A19805FB3005205D1 /* Constants.swift */; };
+		D96F322F1983039200372846 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F322E1983039200372846 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -18,17 +26,25 @@
 			containerPortal = D918762F19803A81005205D1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D918763719803A81005205D1;
-			remoteInfo = LocalAuthentication;
+			remoteInfo = AuthenticationManager;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D918763819803A81005205D1 /* LocalAuthentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LocalAuthentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D918763819803A81005205D1 /* AuthenticationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918763C19803A81005205D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D918763D19803A81005205D1 /* LocalAuthentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalAuthentication.h; sourceTree = "<group>"; };
-		D918764319803A81005205D1 /* LocalAuthenticationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalAuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D918763D19803A81005205D1 /* AuthenticationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationManager.h; sourceTree = "<group>"; };
+		D918764319803A81005205D1 /* AuthenticationManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918764919803A81005205D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D918764A19803A81005205D1 /* LocalAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationTests.swift; sourceTree = "<group>"; };
+		D918764A19803A81005205D1 /* AuthenticationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManagerTests.swift; sourceTree = "<group>"; };
+		D9187658198042F3005205D1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		D918765C198043E2005205D1 /* PINAuthentcationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINAuthentcationViewController.swift; sourceTree = "<group>"; };
+		D918766119804BE9005205D1 /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
+		D918766419805188005205D1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		D9187666198052E5005205D1 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		D91876681980543B005205D1 /* AuthentictionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentictionType.swift; sourceTree = "<group>"; };
+		D918766A19805FB3005205D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D96F322E1983039200372846 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96F322F1983039200372846 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D918764419803A81005205D1 /* LocalAuthentication.framework in Frameworks */,
+				D918764419803A81005205D1 /* AuthenticationManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +70,8 @@
 		D918762E19803A81005205D1 = {
 			isa = PBXGroup;
 			children = (
-				D918763A19803A81005205D1 /* LocalAuthentication */,
-				D918764719803A81005205D1 /* LocalAuthenticationTests */,
+				D918763A19803A81005205D1 /* AuthenticationManager */,
+				D918764719803A81005205D1 /* AuthenticationManagerTests */,
 				D918763919803A81005205D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,36 +79,41 @@
 		D918763919803A81005205D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D918763819803A81005205D1 /* LocalAuthentication.framework */,
-				D918764319803A81005205D1 /* LocalAuthenticationTests.xctest */,
+				D918763819803A81005205D1 /* AuthenticationManager.framework */,
+				D918764319803A81005205D1 /* AuthenticationManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D918763A19803A81005205D1 /* LocalAuthentication */ = {
+		D918763A19803A81005205D1 /* AuthenticationManager */ = {
 			isa = PBXGroup;
 			children = (
-				D918763D19803A81005205D1 /* LocalAuthentication.h */,
+				D918763D19803A81005205D1 /* AuthenticationManager.h */,
+				D918766319805174005205D1 /* Model */,
+				D918766019804B68005205D1 /* Delegates */,
+				D918765B198043BB005205D1 /* Controllers */,
+				D918765A198042F8005205D1 /* Views */,
 				D918763B19803A81005205D1 /* Supporting Files */,
 			);
-			path = LocalAuthentication;
+			path = AuthenticationManager;
 			sourceTree = "<group>";
 		};
 		D918763B19803A81005205D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D95CC5031981AD8500CF1CE6 /* Frameworks */,
 				D918763C19803A81005205D1 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D918764719803A81005205D1 /* LocalAuthenticationTests */ = {
+		D918764719803A81005205D1 /* AuthenticationManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				D918764A19803A81005205D1 /* LocalAuthenticationTests.swift */,
+				D918764A19803A81005205D1 /* AuthenticationManagerTests.swift */,
 				D918764819803A81005205D1 /* Supporting Files */,
 			);
-			path = LocalAuthenticationTests;
+			path = AuthenticationManagerTests;
 			sourceTree = "<group>";
 		};
 		D918764819803A81005205D1 /* Supporting Files */ = {
@@ -102,6 +124,50 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D918765A198042F8005205D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9187658198042F3005205D1 /* Storyboard.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D918765B198043BB005205D1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9187666198052E5005205D1 /* AuthenticationViewController.swift */,
+				D918765C198043E2005205D1 /* PINAuthentcationViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D918766019804B68005205D1 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D918766119804BE9005205D1 /* AuthenticationDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		D918766319805174005205D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D918766419805188005205D1 /* AuthenticationManager.swift */,
+				D91876681980543B005205D1 /* AuthentictionType.swift */,
+				D918766A19805FB3005205D1 /* Constants.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D95CC5031981AD8500CF1CE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D96F322E1983039200372846 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -109,16 +175,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D918763E19803A81005205D1 /* LocalAuthentication.h in Headers */,
+				D918763E19803A81005205D1 /* AuthenticationManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D918763719803A81005205D1 /* LocalAuthentication */ = {
+		D918763719803A81005205D1 /* AuthenticationManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D918764E19803A81005205D1 /* Build configuration list for PBXNativeTarget "LocalAuthentication" */;
+			buildConfigurationList = D918764E19803A81005205D1 /* Build configuration list for PBXNativeTarget "AuthenticationManager" */;
 			buildPhases = (
 				D918763319803A81005205D1 /* Sources */,
 				D918763419803A81005205D1 /* Frameworks */,
@@ -129,14 +195,14 @@
 			);
 			dependencies = (
 			);
-			name = LocalAuthentication;
-			productName = LocalAuthentication;
-			productReference = D918763819803A81005205D1 /* LocalAuthentication.framework */;
+			name = AuthenticationManager;
+			productName = AuthenticationManager;
+			productReference = D918763819803A81005205D1 /* AuthenticationManager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D918764219803A81005205D1 /* LocalAuthenticationTests */ = {
+		D918764219803A81005205D1 /* AuthenticationManagerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D918765119803A81005205D1 /* Build configuration list for PBXNativeTarget "LocalAuthenticationTests" */;
+			buildConfigurationList = D918765119803A81005205D1 /* Build configuration list for PBXNativeTarget "AuthenticationManagerTests" */;
 			buildPhases = (
 				D918763F19803A81005205D1 /* Sources */,
 				D918764019803A81005205D1 /* Frameworks */,
@@ -147,9 +213,9 @@
 			dependencies = (
 				D918764619803A81005205D1 /* PBXTargetDependency */,
 			);
-			name = LocalAuthenticationTests;
-			productName = LocalAuthenticationTests;
-			productReference = D918764319803A81005205D1 /* LocalAuthenticationTests.xctest */;
+			name = AuthenticationManagerTests;
+			productName = AuthenticationManagerTests;
+			productReference = D918764319803A81005205D1 /* AuthenticationManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +236,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D918763219803A81005205D1 /* Build configuration list for PBXProject "LocalAuthentication" */;
+			buildConfigurationList = D918763219803A81005205D1 /* Build configuration list for PBXProject "AuthenticationManager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -182,8 +248,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D918763719803A81005205D1 /* LocalAuthentication */,
-				D918764219803A81005205D1 /* LocalAuthenticationTests */,
+				D918763719803A81005205D1 /* AuthenticationManager */,
+				D918764219803A81005205D1 /* AuthenticationManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9187659198042F3005205D1 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91876691980543B005205D1 /* AuthentictionType.swift in Sources */,
+				D9187667198052E5005205D1 /* AuthenticationViewController.swift in Sources */,
+				D918766519805188005205D1 /* AuthenticationManager.swift in Sources */,
+				D918766219804BE9005205D1 /* AuthenticationDelegate.swift in Sources */,
+				D918765D198043E2005205D1 /* PINAuthentcationViewController.swift in Sources */,
+				D918766B19805FB3005205D1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D918764B19803A81005205D1 /* LocalAuthenticationTests.swift in Sources */,
+				D918764B19803A81005205D1 /* AuthenticationManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +299,7 @@
 /* Begin PBXTargetDependency section */
 		D918764619803A81005205D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D918763719803A81005205D1 /* LocalAuthentication */;
+			target = D918763719803A81005205D1 /* AuthenticationManager */;
 			targetProxy = D918764519803A81005205D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -320,31 +393,36 @@
 		D918764F19803A81005205D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LocalAuthentication/Info.plist;
+				INFOPLIST_FILE = AuthenticationManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = AuthenticationManager;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D918765019803A81005205D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LocalAuthentication/Info.plist;
+				INFOPLIST_FILE = AuthenticationManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = AuthenticationManager;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -360,9 +438,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = LocalAuthenticationTests/Info.plist;
+				INFOPLIST_FILE = AuthenticationManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AuthenticationManagerTests;
 			};
 			name = Debug;
 		};
@@ -373,16 +451,16 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = LocalAuthenticationTests/Info.plist;
+				INFOPLIST_FILE = AuthenticationManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AuthenticationManagerTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D918763219803A81005205D1 /* Build configuration list for PBXProject "LocalAuthentication" */ = {
+		D918763219803A81005205D1 /* Build configuration list for PBXProject "AuthenticationManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D918764C19803A81005205D1 /* Debug */,
@@ -391,21 +469,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D918764E19803A81005205D1 /* Build configuration list for PBXNativeTarget "LocalAuthentication" */ = {
+		D918764E19803A81005205D1 /* Build configuration list for PBXNativeTarget "AuthenticationManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D918764F19803A81005205D1 /* Debug */,
 				D918765019803A81005205D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D918765119803A81005205D1 /* Build configuration list for PBXNativeTarget "LocalAuthenticationTests" */ = {
+		D918765119803A81005205D1 /* Build configuration list for PBXNativeTarget "AuthenticationManagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D918765219803A81005205D1 /* Debug */,
 				D918765319803A81005205D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
