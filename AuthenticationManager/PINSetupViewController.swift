@@ -10,7 +10,7 @@ import UIKit
 
 public class PINSetupViewController: PINViewController, PINViewControllerDelegate {
     var inputPIN: String?
-    public var delegate: PINSetupDelegate?
+    public var setupDelegate: PINSetupDelegate?
 
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ public class PINSetupViewController: PINViewController, PINViewControllerDelegat
             // Advance to the next input
             //TODO: Implement this part
             // For now, alert the delegate of the input code
-            self.delegate?.setupCompleteWithPIN(self.inputPIN!)
+            self.setupDelegate?.setupCompleteWithPIN(self.inputPIN!)
         }
     }
 }

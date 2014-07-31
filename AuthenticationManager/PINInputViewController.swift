@@ -32,7 +32,7 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
         let replacementLength = string.utf16Count
         let rangeLength = range.length
         let newLength = oldLength - rangeLength + replacementLength
-        //        let returnKeyUsed = string.bridgeToObjectiveC().containsString("\n")
+//        let returnKeyUsed = string.bridgeToObjectiveC().containsString("\n")
         let returnKeyUsed = false
         return newLength <= 4 || returnKeyUsed
     }
@@ -41,11 +41,8 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
         assert(sender == self.inputTextField, "Only the PIN Text Box should call the PINTextFieldEditingChanged: method")
         let inputCodeLength = self.inputTextField.text.utf16Count
         self.updatePINLabel()
-        println("Got a PIN of length \(inputCodeLength)")
         if inputCodeLength == maxPINLength {
             self.delegate?.PINWasInput?(self.inputTextField.text)
-            // Try the authentication code
-//            self.checkPIN()
         }
     }
 
@@ -95,6 +92,6 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
                 }
             });
         // Vibrate the device
-        //        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+//        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 }

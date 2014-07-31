@@ -9,30 +9,32 @@
 import UIKit
 
 /// A view controller used to manage the input of a PIN and check its validity
-public class PINAuthenticationViewController: PINViewController {
-    var PINCode: String?
+public class PINAuthenticationViewController: PINViewController, PINViewControllerDelegate {
+    public var PIN: String?
+    public var authenticationDelegate: PINAuthenticationDelegate?
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.957, alpha: 1)
+        self.viewController.delegate = self
+        self.viewController.textLabel.text = "Enter your passcode"
+        self.title = "Enter Passcode"
     }
 
-    func checkPIN() {
-//        let inputCode = self.viewController.inputTextField.text
-//        if !self.PINCode {
-//            // PIN is not set, alert the delegate that a PIN has been input
-//            self.delegate?.PINWasInput?(inputCode)
-//        } else {
-//            // PIN has been set, check it
-//            if inputCode == self.PINCode {
-//                // Input PIN is correct
-//                self.delegate?.authenticationDidSucceed?()
-//            } else {
-//                // Input PIN is incorrect, update the UI...
-//                self.viewController.inputPINWasIncorrect()
-//                // ... and alert the delegate
-//                self.delegate?.inputPINWasIncorrect?(inputCode)
-//            }
-//        }
+    public func PINWasInput(PIN: String) {
+        if !self.PIN {
+            // PIN is not set, alert the delegate that a PIN has been input
+            self.authenticationDelegate?.PINWasInput?(PIN)
+        } else {
+            // PIN has been set, check it
+            if PIN == self.PIN {
+                // Input PIN is correct
+                self.authenticationDelegate?.authenticationDidSucceed?()
+            } else {
+                // Input PIN is incorrect, update the UI...
+                self.viewController.inputPINWasInvalid()
+                // ... and alert the delegate
+                self.authenticationDelegate?.inputPINWasIncorrect?(PIN)
+            }
+        }
     }
 }

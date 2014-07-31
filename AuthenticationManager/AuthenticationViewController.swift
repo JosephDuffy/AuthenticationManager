@@ -9,7 +9,7 @@
 import UIKit
 
 public class AuthenticationViewController: UIViewController {
-//    public var delegate: AuthenticationDelegate?
+    public var delegate: AuthenticationDelegate?
     lazy var manager: AuthenticationManager = {
     return AuthenticationManager.sharedInstance
     }()
@@ -37,6 +37,7 @@ public class AuthenticationViewController: UIViewController {
     }
 
     public func cancelButtonWasPressed() {
+        self.delegate?.authenticationWasCanceled?(self)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

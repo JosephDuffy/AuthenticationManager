@@ -22,6 +22,8 @@
 		D99E2B111985982200F8D1AA /* PINInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B101985982200F8D1AA /* PINInputViewController.swift */; };
 		D99E2B161986F46A00F8D1AA /* PINSetupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B151986F46A00F8D1AA /* PINSetupDelegate.swift */; };
 		D9A9BA1B1989936A006A943C /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA1A1989936A006A943C /* PINViewController.swift */; };
+		D9A9BA1D198ADA4D006A943C /* PINAuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA1C198ADA4D006A943C /* PINAuthenticationDelegate.swift */; };
+		D9A9BA22198ADC2A006A943C /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA21198ADC2A006A943C /* AuthenticationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D99E2B101985982200F8D1AA /* PINInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINInputViewController.swift; sourceTree = "<group>"; };
 		D99E2B151986F46A00F8D1AA /* PINSetupDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINSetupDelegate.swift; sourceTree = "<group>"; };
 		D9A9BA1A1989936A006A943C /* PINViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
+		D9A9BA1C198ADA4D006A943C /* PINAuthenticationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINAuthenticationDelegate.swift; sourceTree = "<group>"; };
+		D9A9BA21198ADC2A006A943C /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		D918766019804B68005205D1 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				D9A9BA20198ADC1A006A943C /* Generic */,
 				D99E2B131986F41900F8D1AA /* PIN */,
 			);
 			name = Delegates;
@@ -208,6 +213,23 @@
 			isa = PBXGroup;
 			children = (
 				D99E2B151986F46A00F8D1AA /* PINSetupDelegate.swift */,
+				D9A9BA1C198ADA4D006A943C /* PINAuthenticationDelegate.swift */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		D9A9BA20198ADC1A006A943C /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				D9A9BA23198ADE11006A943C /* External */,
+			);
+			name = Generic;
+			sourceTree = "<group>";
+		};
+		D9A9BA23198ADE11006A943C /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D9A9BA21198ADC2A006A943C /* AuthenticationDelegate.swift */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -322,12 +344,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99E2B111985982200F8D1AA /* PINInputViewController.swift in Sources */,
+				D9A9BA1D198ADA4D006A943C /* PINAuthenticationDelegate.swift in Sources */,
 				D91876691980543B005205D1 /* AuthentictionType.swift in Sources */,
 				D9187667198052E5005205D1 /* AuthenticationViewController.swift in Sources */,
 				D99E2B0F1985941C00F8D1AA /* PINSetupViewController.swift in Sources */,
 				D918766519805188005205D1 /* AuthenticationManager.swift in Sources */,
 				D99E2B161986F46A00F8D1AA /* PINSetupDelegate.swift in Sources */,
 				D918766219804BE9005205D1 /* PINViewControllerDelegate.swift in Sources */,
+				D9A9BA22198ADC2A006A943C /* AuthenticationDelegate.swift in Sources */,
 				D918765D198043E2005205D1 /* PINAuthenticationViewController.swift in Sources */,
 				D9A9BA1B1989936A006A943C /* PINViewController.swift in Sources */,
 				D918766B19805FB3005205D1 /* Constants.swift in Sources */,

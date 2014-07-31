@@ -9,7 +9,5 @@
 import UIKit
 
 @objc public protocol PINViewControllerDelegate {
-    optional func authenticationDidSucceed()
     optional func PINWasInput(PIN: String)
-    optional func inputPINWasIncorrect(PIN: String)
 }
