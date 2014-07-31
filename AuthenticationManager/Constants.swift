@@ -9,5 +9,5 @@
 import Foundation
 
 // TODO: Make these class variables of the AuthenticationManager class
-public let kAMDefaultAuthenticationKey = "defaultAuthenticationKey"
-public let kAMDefaultPINCodeKey = "defaultPINCodeKey"
+public let kAMDefaultAuthenticationMethodKey = "authenticationManagerDefaultAuthenticationMethodKey"
+public let kAMPINKey = "authenticationManagerPINKey"

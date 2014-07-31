@@ -9,7 +9,7 @@
 import Foundation
 
 public enum AuthenticationType: Int {
-    case PINCode
-    case Password
-    case Biometrics
+    case PIN
+//    case Password
+//    case Biometrics
 }

@@ -20,9 +20,18 @@ public class AuthenticationManager {
     didSet {
         // Ensure the default values are registered
         self.userDefaults.registerDefaults([
-            kAMDefaultAuthenticationKey: AuthenticationType.PINCode.toRaw(),
-            kAMDefaultPINCodeKey: "1234"
+            kAMDefaultAuthenticationMethodKey: AuthenticationType.PIN.toRaw()
             ])
+    }
+    }
+
+    lazy var bundle: NSBundle = {
+        return NSBundle(identifier: "net.yetii.AuthenticationManager")
+    }()
+
+    var storyboard: UIStoryboard {
+    get {
+        return UIStoryboard(name: "Storyboard", bundle: self.bundle)
     }
     }
 
@@ -31,31 +40,25 @@ public class AuthenticationManager {
         self.userDefaults = NSUserDefaults.standardUserDefaults()
     }
 
-    public func createAuthenticationViewController() -> AuthenticationViewController {
-        let defaultAuthenticationMethodInt = self.userDefaults.valueForKey(kAMDefaultAuthenticationKey) as Int
-        let defaultAuthenticationMethod = AuthenticationType.fromRaw(defaultAuthenticationMethodInt)
-        return self.createAuthenticationViewController(defaultAuthenticationMethod!)
-    }
-
-    public func createAuthenticationViewController(authenticationType: AuthenticationType) -> AuthenticationViewController {
-        let mainBundlePath: String = NSBundle.mainBundle().resourcePath
-        let frameworkBundlePath = mainBundlePath.stringByAppendingPathComponent("Frameworks/AuthenticationManager.framework")
-        let frameworkBundle = NSBundle(path: frameworkBundlePath)
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: frameworkBundle)
+    public func getAuthenticationViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: self.bundle)
         var viewController: AuthenticationViewController
         switch authenticationType {
-        case .PINCode:
-            viewController = storyboard.instantiateViewControllerWithIdentifier("PINAuthentication") as PINAuthentcationViewController
-        case .Password:
-            viewController = storyboard.instantiateViewControllerWithIdentifier("PasswordAuthentication") as PINAuthentcationViewController
-        case .Biometrics:
-            viewController = storyboard.instantiateViewControllerWithIdentifier("BiometricsAuthentication") as PINAuthentcationViewController
+        case .PIN:
+            viewController = PINAuthenticationViewController()
         }
         viewController.userDefaults = self.userDefaults
         return viewController
     }
 
-    func loadAuthenticationSetupViewController(authenticationType: AuthenticationType) {
+    public func getAuthenticationSetupViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
         // TODO: Create the views for these and implement this method
+        var viewController: AuthenticationViewController
+        switch authenticationType {
+        case .PIN:
+            viewController = PINSetupViewController()
+        }
+        viewController.userDefaults = self.userDefaults
+        return viewController
     }
 }
