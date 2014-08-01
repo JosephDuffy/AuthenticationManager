@@ -29,7 +29,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ET-cP-s0A">
-                                <rect key="frame" x="231" y="75.5" width="137.5" height="20.5"/>
+                                <rect key="frame" x="231" y="75" width="137.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="INR-fq-GZi"/>
                                 </constraints>
@@ -45,10 +45,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint Label Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hap-TY-MS0">
+                                <rect key="frame" x="213" y="162" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Hap-TY-MS0" secondAttribute="centerX" id="39H-Vn-X9T"/>
                             <constraint firstItem="lAb-Ik-qfb" firstAttribute="top" secondItem="7ET-cP-s0A" secondAttribute="bottom" constant="18" id="3fx-Mx-MZS"/>
+                            <constraint firstItem="Hap-TY-MS0" firstAttribute="top" secondItem="lAb-Ik-qfb" secondAttribute="bottom" constant="18" id="BCV-uE-qy5"/>
                             <constraint firstAttribute="centerX" secondItem="lAb-Ik-qfb" secondAttribute="centerX" id="Cnp-ft-3Eu"/>
                             <constraint firstAttribute="centerY" secondItem="bye-Ae-gd0" secondAttribute="centerY" id="Kqw-Nd-UYY"/>
                             <constraint firstAttribute="centerX" secondItem="7ET-cP-s0A" secondAttribute="centerX" id="Ue8-Px-0dT"/>
@@ -60,6 +68,7 @@
                     <size key="freeformSize" width="600" height="400"/>
                     <connections>
                         <outlet property="PINLabel" destination="lAb-Ik-qfb" id="hGe-ko-JWs"/>
+                        <outlet property="hintLabel" destination="Hap-TY-MS0" id="iNn-P4-ctY"/>
                         <outlet property="inputTextField" destination="bye-Ae-gd0" id="E7A-IN-TlH"/>
                         <outlet property="textLabel" destination="7ET-cP-s0A" id="iDA-v1-7Ev"/>
                     </connections>

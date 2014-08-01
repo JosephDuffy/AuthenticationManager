@@ -13,6 +13,7 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var PINLabel: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var hintLabel: UILabel!
     var delegate: PINViewControllerDelegate?
     let maxPINLength = 4
     var animating: Bool = false
@@ -20,6 +21,7 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.hintLabel.text = ""
         self.inputTextField.delegate = self
         self.inputTextField.addTarget(self, action: "inputTextFieldEditingChanged:", forControlEvents: .EditingChanged)
         self.inputTextField.becomeFirstResponder()
