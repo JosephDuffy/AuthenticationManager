@@ -1,0 +1,4 @@
+# A .travis.yml file for when Travis CI supports building Swift projects built using Xcode 6
+language: objective-c
+xcode_project: AuthenticationManager.xcodeproj
+xcode_scheme: AuthenticationManager
