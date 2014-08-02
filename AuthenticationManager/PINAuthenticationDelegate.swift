@@ -9,7 +9,7 @@
 import Foundation
 
 @objc public protocol PINAuthenticationDelegate {
-    optional func authenticationDidSucceed()
+    func authenticationDidSucceed()
     optional func inputPINWasIncorrect(PIN: String)
     optional func PINWasInput(PIN: String)
 }
