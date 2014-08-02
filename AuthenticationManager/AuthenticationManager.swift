@@ -40,23 +40,34 @@ public class AuthenticationManager {
         self.userDefaults = NSUserDefaults.standardUserDefaults()
     }
 
-    public func getAuthenticationViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: self.bundle)
+    /// Create and return a subclass of AuthenticationViewController used to perform the initial setup of the provided authentication type
+    public func getAuthenticationSetupViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
         var viewController: AuthenticationViewController
         switch authenticationType {
         case .PIN:
-            viewController = PINAuthenticationViewController()
+            viewController = PINSetupViewController()
         }
         viewController.userDefaults = self.userDefaults
         return viewController
     }
 
-    public func getAuthenticationSetupViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
-        // TODO: Create the views for these and implement this method
+    /// Create and return a subclass of AuthenticationViewController used to modify the stored value of the provided authentication type
+    public func getAuthenticationUpdateViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
         var viewController: AuthenticationViewController
         switch authenticationType {
         case .PIN:
-            viewController = PINSetupViewController()
+            viewController = PINUpdateViewController()
+        }
+        viewController.userDefaults = self.userDefaults
+        return viewController
+    }
+
+    /// Create and return a subclass of AuthenticationViewController used to authenticate a user with the provided authentication type
+    public func getAuthenticationViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
+        var viewController: AuthenticationViewController
+        switch authenticationType {
+        case .PIN:
+            viewController = PINAuthenticationViewController()
         }
         viewController.userDefaults = self.userDefaults
         return viewController
