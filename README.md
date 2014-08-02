@@ -1,6 +1,6 @@
 AuthenticationManager
 ===
-[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
+[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 Authentication Manager is an iOS framework, written in Swift, aimed to aid in-app authentication.
 
