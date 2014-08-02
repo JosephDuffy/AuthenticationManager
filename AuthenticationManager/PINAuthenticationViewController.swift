@@ -13,6 +13,13 @@ public class PINAuthenticationViewController: PINViewController, PINViewControll
     public var PIN: String?
     public var authenticationDelegate: PINAuthenticationDelegate?
 
+    init() {
+        super.init()
+        if let currentPIN = self.manager.userDefaults.valueForKey(kAMPINKey) as? String {
+            self.PIN = currentPIN
+        }
+    }
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.viewController.delegate = self
@@ -20,20 +27,20 @@ public class PINAuthenticationViewController: PINViewController, PINViewControll
         self.title = "Enter Passcode"
     }
 
-    public func PINWasInput(PIN: String) {
+    public func PINWasInput(inputPIN: String) {
         if !self.PIN {
             // PIN is not set, alert the delegate that a PIN has been input
-            self.authenticationDelegate?.PINWasInput?(PIN)
+            self.authenticationDelegate?.PINWasInput?(inputPIN)
         } else {
             // PIN has been set, check it
-            if PIN == self.PIN {
+            if inputPIN == self.PIN {
                 // Input PIN is correct
                 self.authenticationDelegate?.authenticationDidSucceed?()
             } else {
                 // Input PIN is incorrect, update the UI...
                 self.viewController.inputPINWasInvalid()
                 // ... and alert the delegate
-                self.authenticationDelegate?.inputPINWasIncorrect?(PIN)
+                self.authenticationDelegate?.inputPINWasIncorrect?(inputPIN)
             }
         }
     }

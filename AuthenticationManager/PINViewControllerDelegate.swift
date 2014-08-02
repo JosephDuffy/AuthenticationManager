@@ -9,5 +9,5 @@
 import UIKit
 
 @objc public protocol PINViewControllerDelegate {
-    optional func PINWasInput(PIN: String)
+    optional func PINWasInput(inputPIN: String)
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 public class PINSetupViewController: PINViewController, PINViewControllerDelegate {
-    var inputPIN: String?
+    var firstPIN: String?
     public var setupDelegate: PINSetupDelegate?
 
     override public func viewDidLoad() {
@@ -19,20 +19,23 @@ public class PINSetupViewController: PINViewController, PINViewControllerDelegat
         self.title = "Set Passcode"
     }
 
-    public func PINWasInput(PIN: String) {
-        if let firstPIN = self.inputPIN {
+    public func PINWasInput(inputPIN: String) {
+        if let firstPIN = self.firstPIN {
             // PIN has already been input, check the 2 are equal
-            if PIN == firstPIN {
-                // Both PINs have been input and are valid, alert the delegate
-                self.setupDelegate?.setupCompleteWithPIN(self.inputPIN!)
+            if inputPIN == firstPIN {
+                // Both PINs have been input and are valid, save the value
+                self.manager.userDefaults.setValue(inputPIN, forKey: kAMPINKey)
+                self.manager.userDefaults.synchronize()
+                // alert the delegate
+                self.setupDelegate?.setupCompleteWithPIN(firstPIN)
             } else {
                 // Second PIN is invalid, reset the view
-                self.inputPIN = nil
+                self.firstPIN = nil
                 self.showNewInputViewWithTitle("Set Passcode", hintLabelText: "Passcodes did not match. Try again.")
             }
         } else {
             // First PIN to be input, save the value
-            self.inputPIN = PIN
+            self.firstPIN = inputPIN
             // Advance to the next input
             self.showNewInputViewWithTitle("Re-enter your passcode", hintLabelText: "")
         }

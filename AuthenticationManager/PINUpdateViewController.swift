@@ -38,6 +38,8 @@ public class PINUpdateViewController: PINViewController {
                 if self.newPIN == inputPIN {
                     // Verification PIN was the same as the first new PIN, update the value
                     self.manager.userDefaults.setValue(inputPIN, forKey: kAMPINKey)
+                    self.manager.userDefaults.synchronize()
+                    // and alert the delgate
                     self.updateDelegate?.PINWasUpdated(inputPIN)
                 } else {
                     self.newPIN = nil
