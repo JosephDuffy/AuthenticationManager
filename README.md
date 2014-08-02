@@ -8,7 +8,7 @@ Authentication Manager currently supports a single authentication type: PIN. PIN
 
 ##Implementation
 
-The implementation of Authentication Manager is relatively simple. If you wish to see any example of the framework implemented in an iOS app, visit the (Authentication Manager Examples)[] After adding the AuthenticationManager framework in your project, the first step is get the shared instance of the `AuthenticationManager` by getting the `sharedInstance` class property of the `AuthenticationManager` class:
+The implementation of Authentication Manager is relatively simple. If you wish to see any example of the framework implemented in an iOS app, visit the [Authentication Manager Examples GitHub Repo](https://github.com/YetiiNet/AuthenticationManagerExamples). After adding the AuthenticationManager framework in your project, the first step is get the shared instance of the `AuthenticationManager` by getting the `sharedInstance` class property of the `AuthenticationManager` class:
 
 `let manager = AuthenticationManager.sharedInstance`
 
