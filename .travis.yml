@@ -1,3 +1,2 @@
 language: objective-c
-xcode_project: AuthenticationManager.xcodeproj # path to your xcodeproj folder
-xcode_scheme: AuthenticationManager
+script: build -project AuthenticationManager.xcodeproj -scheme AuthenticationManager

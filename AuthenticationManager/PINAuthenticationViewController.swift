@@ -35,7 +35,7 @@ public class PINAuthenticationViewController: PINViewController, PINViewControll
             // PIN has been set, check it
             if inputPIN == self.PIN {
                 // Input PIN is correct
-                self.authenticationDelegate?.authenticationDidSucceed?()
+                self.authenticationDelegate?.authenticationDidSucceed()
             } else {
                 // Input PIN is incorrect, update the UI...
                 self.viewController.inputPINWasInvalid()
