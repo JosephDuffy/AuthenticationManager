@@ -8,7 +8,7 @@ Authentication Manager currently supports a single authentication type: PIN. PIN
 
 ##Implementation
 
-The implementation of Authentication Manager is relatively simple. If you wish to see any example of the framework implemented in an iOS app, visit the [Authentication Manager Examples GitHub Repo](https://github.com/YetiiNet/AuthenticationManagerExamples). After adding the AuthenticationManager framework in your project, the first step is get the shared instance of the `AuthenticationManager` by getting the `sharedInstance` class property of the `AuthenticationManager` class:
+The implementation of Authentication Manager is relatively simple. If you wish to see an example of the framework implemented in an iOS app, visit the [Authentication Manager Examples GitHub Repo](https://github.com/YetiiNet/AuthenticationManagerExamples). After adding the AuthenticationManager framework in your project, the first step is get the shared instance of the `AuthenticationManager` by getting the `sharedInstance` class property of the `AuthenticationManager` class:
 
 `let manager = AuthenticationManager.sharedInstance`
 
@@ -79,3 +79,20 @@ func PINWasUpdated(newPIN: String) {
 ### Resetting the PIN
 
 Resetting the PIN is a simple task: remove the value of the PIN in the user defaults. This can be done by calling `AuthenticationManager.sharedInstance.userDefaults.removeObjectForKey(kAMPINKey)`
+
+## Upcoming
+
+There are various features that will hopefully be coming to Authentication Manager, some of which include:
+
+* More secure storing of the user's PINs
+* Support for more authentication methods, including biometrics
+* Localisation of the user-facing aspects of the application
+
+## Helping Authentication Manager
+
+Although no one is required to (obviously), if you feel so inclined, you could help out in any of the following ways:
+
+* Use the framework in your own application, or point other people the frameworks way
+* Let me know if you do use it
+* Post any issues you find
+* Create a pull request if you make any improvements or additions
