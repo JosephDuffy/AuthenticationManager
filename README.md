@@ -18,7 +18,7 @@ By default, Authentication Manager uses standard user defaults to store the valu
 
 The `PINSetupViewController` presents the user with a view that guides the user through setting their PIN. It saves the PIN to the instance of `NSUserDefaults` set on the `AuthenticationManager` object when the setup has compete, and calls the `setupCompleteWithPIN(inputPIN: String)` method on the `setupDelegate`. Below is some example code to load and use this class.
 
-```
+```swift
 let viewController = self.manager.getAuthenticationSetupViewControllerForType(.PIN) as PINSetupViewController
 viewController.delegate = self
 viewController.setupDelegate = self
@@ -29,7 +29,7 @@ Because `PINSetupViewController` extends the `AuthenticationViewController`, the
 
 You should also implement the `setupCompleteWithPIN(PIN: String)`, which will be called once the setup has complete. In this method you dismiss the PIN view controller and perform any further tasks you wish to perform, for example:
 
-```
+```swift
 func setupCompleteWithPIN(PIN: String) {
     self.dismissViewControllerAnimated(true, completion: nil)
     // Perform any further tasks
@@ -40,7 +40,7 @@ func setupCompleteWithPIN(PIN: String) {
 
 Once the user has set their PIN you will want to be able to re-authenticate the user by asking them to input their PIN again. This can be done just as simply as setting the PIN:
 
-```
+```swift
 let viewController = self.manager.getAuthenticationViewControllerForType(.PIN) as PINAuthenticationViewController
 viewController.delegate = self
 viewController.authenticationDelegate = self
@@ -49,7 +49,7 @@ self.presentViewController(viewController.viewInNavigationController(), animated
 
 The object calling this code must comply to the `PINAuthenticationDelegate` protocol. The `PINAuthenticationDelegate` has various methods that can be implemented, but the only required method is the `authenticationDidSucceed` method. As with the `setupCompleteWithPIN(PIN: String)` method, you should dismiss the view controller in this method, for example:
 
-```
+```swift
 func authenticationDidSucceed() {
     self.presentedViewController.dismissViewControllerAnimated(true, completion: nil)
     // Perform any further tasks
@@ -60,7 +60,7 @@ func authenticationDidSucceed() {
 
 If you wish to provide the user the ability to update their PIN, you can do so in a similar manner to the way you setup and authenticate the PIN, for example:
 
-```
+```swift
 let viewController = self.manager.getAuthenticationUpdateViewControllerForType(.PIN) as PINUpdateViewController
 viewController.delegate = self
 viewController.updateDelegate = self
@@ -69,7 +69,7 @@ self.presentViewController(viewController.viewInNavigationController(), animated
 
 Similarly, the calling object should conform to the `PINUpdateDelegate` protocol and implement the `PINWasUpdated(newPIN: String)` method:
 
-```
+```swift
 func PINWasUpdated(newPIN: String) {
     self.dismissViewControllerAnimated(true, completion: nil)
     // Perform any further tasks

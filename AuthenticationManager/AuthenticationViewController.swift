@@ -19,7 +19,6 @@ public class AuthenticationViewController: UIViewController {
         return self._authenticationType
     }
     }
-    var userDefaults: NSUserDefaults!
 
     public init() {
         super.init(nibName: nil, bundle: nil)

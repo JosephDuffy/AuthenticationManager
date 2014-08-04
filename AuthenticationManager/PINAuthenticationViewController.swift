@@ -13,15 +13,13 @@ public class PINAuthenticationViewController: PINViewController, PINViewControll
     public var PIN: String?
     public var authenticationDelegate: PINAuthenticationDelegate?
 
-    init() {
-        super.init()
-        if let currentPIN = self.manager.userDefaults.valueForKey(kAMPINKey) as? String {
-            self.PIN = currentPIN
-        }
-    }
-
     override public func viewDidLoad() {
         super.viewDidLoad()
+        if self.PIN == nil {
+            // PIN has not been explictly set, try to load it from the keychain
+            self.PIN = JNKeychain.loadValueForKey(kAMPINKey) as? String
+        }
+        assert(self.PIN != nil, "Cannot load the PIN authentication view controller when no PIN has been set")
         self.viewController.delegate = self
         self.viewController.textLabel.text = "Enter your passcode"
         self.title = "Enter Passcode"

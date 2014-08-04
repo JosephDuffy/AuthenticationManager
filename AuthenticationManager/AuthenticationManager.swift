@@ -15,14 +15,12 @@ public class AuthenticationManager {
         return _sharedInstance
     }
 
-    public var userDefaults: NSUserDefaults!
-    {
-    didSet {
-        // Ensure the default values are registered
-        self.userDefaults.registerDefaults([
-            kAMDefaultAuthenticationMethodKey: AuthenticationType.PIN.toRaw()
-            ])
+    public class var storedPIN: String? {
+        return JNKeychain.loadValueForKey(kAMPINKey) as? String
     }
+
+    public class func resetStoredPIN() {
+        JNKeychain.deleteValueForKey(kAMPINKey)
     }
 
     lazy var bundle: NSBundle = {
@@ -35,11 +33,6 @@ public class AuthenticationManager {
     }
     }
 
-    private init() {
-        // Use the standard user defaults, unless this is overwritten
-        self.userDefaults = NSUserDefaults.standardUserDefaults()
-    }
-
     /// Create and return a subclass of AuthenticationViewController used to perform the initial setup of the provided authentication type
     public func getAuthenticationSetupViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
         var viewController: AuthenticationViewController
@@ -47,7 +40,6 @@ public class AuthenticationManager {
         case .PIN:
             viewController = PINSetupViewController()
         }
-        viewController.userDefaults = self.userDefaults
         return viewController
     }
 
@@ -58,7 +50,6 @@ public class AuthenticationManager {
         case .PIN:
             viewController = PINUpdateViewController()
         }
-        viewController.userDefaults = self.userDefaults
         return viewController
     }
 
@@ -69,7 +60,6 @@ public class AuthenticationManager {
         case .PIN:
             viewController = PINAuthenticationViewController()
         }
-        viewController.userDefaults = self.userDefaults
         return viewController
     }
 }

@@ -23,6 +23,8 @@
 		D99E2B0F1985941C00F8D1AA /* PINSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B0E1985941C00F8D1AA /* PINSetupViewController.swift */; };
 		D99E2B111985982200F8D1AA /* PINInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B101985982200F8D1AA /* PINInputViewController.swift */; };
 		D99E2B161986F46A00F8D1AA /* PINSetupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B151986F46A00F8D1AA /* PINSetupDelegate.swift */; };
+		D9A12B9C199014C600B72F9C /* JNKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = D9A12B9A199014C600B72F9C /* JNKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9A12B9D199014C600B72F9C /* JNKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A12B9B199014C600B72F9C /* JNKeychain.m */; };
 		D9A9BA1B1989936A006A943C /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA1A1989936A006A943C /* PINViewController.swift */; };
 		D9A9BA1D198ADA4D006A943C /* PINAuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA1C198ADA4D006A943C /* PINAuthenticationDelegate.swift */; };
 		D9A9BA22198ADC2A006A943C /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA21198ADC2A006A943C /* AuthenticationDelegate.swift */; };
@@ -58,6 +60,8 @@
 		D99E2B0E1985941C00F8D1AA /* PINSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINSetupViewController.swift; sourceTree = "<group>"; };
 		D99E2B101985982200F8D1AA /* PINInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINInputViewController.swift; sourceTree = "<group>"; };
 		D99E2B151986F46A00F8D1AA /* PINSetupDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINSetupDelegate.swift; sourceTree = "<group>"; };
+		D9A12B9A199014C600B72F9C /* JNKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNKeychain.h; sourceTree = "<group>"; };
+		D9A12B9B199014C600B72F9C /* JNKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNKeychain.m; sourceTree = "<group>"; };
 		D9A9BA1A1989936A006A943C /* PINViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
 		D9A9BA1C198ADA4D006A943C /* PINAuthenticationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINAuthenticationDelegate.swift; sourceTree = "<group>"; };
 		D9A9BA21198ADC2A006A943C /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 		D918766319805174005205D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D9A12B9A199014C600B72F9C /* JNKeychain.h */,
+				D9A12B9B199014C600B72F9C /* JNKeychain.m */,
 				D918766419805188005205D1 /* AuthenticationManager.swift */,
 				D91876681980543B005205D1 /* AuthentictionType.swift */,
 				D918766A19805FB3005205D1 /* Constants.swift */,
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D918763E19803A81005205D1 /* AuthenticationManager.h in Headers */,
+				D9A12B9C199014C600B72F9C /* JNKeychain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +370,7 @@
 				D92FED1D198D4F71007D8CD3 /* PINUpdateDelegate.swift in Sources */,
 				D9A9BA1B1989936A006A943C /* PINViewController.swift in Sources */,
 				D918766B19805FB3005205D1 /* Constants.swift in Sources */,
+				D9A12B9D199014C600B72F9C /* JNKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,10 +428,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -460,9 +469,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -480,7 +490,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AuthenticationManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = AuthenticationManager;
@@ -499,7 +508,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AuthenticationManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = AuthenticationManager;

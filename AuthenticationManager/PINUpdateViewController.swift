@@ -11,10 +11,17 @@ import UIKit
 public class PINUpdateViewController: PINViewController {
     var newPIN: String?
     var viewIsAuthenticated = false
+    var currentPIN: String!
     public var updateDelegate: PINUpdateDelegate?
+
+    init() {
+        super.init()
+    }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.currentPIN = JNKeychain.loadValueForKey(kAMPINKey) as? String
+        assert(self.currentPIN != nil, "Cannot load the PIN update view controller when no PIN has been set")
         self.viewController.delegate = self
         self.viewController.textLabel.text = "Enter your old passcode"
         self.title = "Change Passcode"
@@ -23,7 +30,7 @@ public class PINUpdateViewController: PINViewController {
     public func PINWasInput(inputPIN: String) {
         if !self.viewIsAuthenticated {
             // User has input their current PIN, check it against the stored value
-            if (inputPIN == self.manager.userDefaults.valueForKey(kAMPINKey) as? String) {
+            if (inputPIN == self.currentPIN) {
                 // Input PIN is the correct current PIN, advance the screen
                 self.viewIsAuthenticated = true
                 self.showNewInputViewWithTitle("Enter your new passcode", hintLabelText: "")
@@ -36,9 +43,8 @@ public class PINUpdateViewController: PINViewController {
             if self.newPIN {
                 // New PIN has already been entered once, check the two match
                 if self.newPIN == inputPIN {
-                    // Verification PIN was the same as the first new PIN, update the value
-                    self.manager.userDefaults.setValue(inputPIN, forKey: kAMPINKey)
-                    self.manager.userDefaults.synchronize()
+                    // Verified PIN was the same as the first new PIN, update the value
+                    JNKeychain.saveValue(inputPIN, forKey: kAMPINKey)
                     // and alert the delgate
                     self.updateDelegate?.PINWasUpdated(inputPIN)
                 } else {

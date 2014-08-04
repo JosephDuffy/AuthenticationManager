@@ -24,8 +24,8 @@ public class PINSetupViewController: PINViewController, PINViewControllerDelegat
             // PIN has already been input, check the 2 are equal
             if inputPIN == firstPIN {
                 // Both PINs have been input and are valid, save the value
-                self.manager.userDefaults.setValue(inputPIN, forKey: kAMPINKey)
-                self.manager.userDefaults.synchronize()
+                JNKeychain.saveValue(inputPIN, forKey: kAMPINKey)
+                let savedPIN = JNKeychain.loadValueForKey(kAMPINKey) as? String
                 // alert the delegate
                 self.setupDelegate?.setupCompleteWithPIN(firstPIN)
             } else {
