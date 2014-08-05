@@ -8,19 +8,12 @@
 
 import UIKit
 
-private let _sharedInstance = AuthenticationManager()
-
 public class AuthenticationManager {
     public class var sharedInstance: AuthenticationManager {
-        return _sharedInstance
-    }
-
-    public class var storedPIN: String? {
-        return JNKeychain.loadValueForKey(kAMPINKey) as? String
-    }
-
-    public class func resetStoredPIN() {
-        JNKeychain.deleteValueForKey(kAMPINKey)
+        struct Static {
+            static let instance: AuthenticationManager = AuthenticationManager()
+        }
+        return Static.instance
     }
 
     lazy var bundle: NSBundle = {

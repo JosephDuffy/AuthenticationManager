@@ -20,7 +20,11 @@ public class AuthenticationViewController: UIViewController {
     }
     }
 
-    public init() {
+    required public init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+
+    public override init() {
         super.init(nibName: nil, bundle: nil)
         var manager = AuthenticationManager.sharedInstance
     }

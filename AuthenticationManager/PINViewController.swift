@@ -12,8 +12,12 @@ import UIKit
 public class PINViewController: AuthenticationViewController, PINViewControllerDelegate {
     var viewController: PINInputViewController!
 
-    init() {
+    override init() {
         super.init()
+    }
+
+    required public init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
     }
 
     override public func viewDidLoad() {

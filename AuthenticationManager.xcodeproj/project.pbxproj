@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D918763E19803A81005205D1 /* AuthenticationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D918763D19803A81005205D1 /* AuthenticationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D918764419803A81005205D1 /* AuthenticationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D918763819803A81005205D1 /* AuthenticationManager.framework */; };
-		D918764B19803A81005205D1 /* AuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918764A19803A81005205D1 /* AuthenticationManagerTests.swift */; };
 		D9187659198042F3005205D1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9187658198042F3005205D1 /* Storyboard.storyboard */; };
 		D918765D198043E2005205D1 /* PINAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918765C198043E2005205D1 /* PINAuthenticationViewController.swift */; };
 		D918766219804BE9005205D1 /* PINViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918766119804BE9005205D1 /* PINViewControllerDelegate.swift */; };
@@ -19,6 +18,7 @@
 		D918766B19805FB3005205D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918766A19805FB3005205D1 /* Constants.swift */; };
 		D92FED1B198D4A28007D8CD3 /* PINUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92FED1A198D4A28007D8CD3 /* PINUpdateViewController.swift */; };
 		D92FED1D198D4F71007D8CD3 /* PINUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92FED1C198D4F71007D8CD3 /* PINUpdateDelegate.swift */; };
+		D94330BA19902A600021C69C /* AuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94330B919902A600021C69C /* AuthenticationManagerTests.swift */; };
 		D96F322F1983039200372846 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F322E1983039200372846 /* AudioToolbox.framework */; };
 		D99E2B0F1985941C00F8D1AA /* PINSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B0E1985941C00F8D1AA /* PINSetupViewController.swift */; };
 		D99E2B111985982200F8D1AA /* PINInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B101985982200F8D1AA /* PINInputViewController.swift */; };
@@ -28,10 +28,33 @@
 		D9A9BA1B1989936A006A943C /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA1A1989936A006A943C /* PINViewController.swift */; };
 		D9A9BA1D198ADA4D006A943C /* PINAuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA1C198ADA4D006A943C /* PINAuthenticationDelegate.swift */; };
 		D9A9BA22198ADC2A006A943C /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9BA21198ADC2A006A943C /* AuthenticationDelegate.swift */; };
+		D9BAFF5F19915C0000DAEF5C /* PINManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BAFF5E19915C0000DAEF5C /* PINManagerTests.swift */; };
+		D9F97154199155AA00AA9009 /* PINManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F97153199155AA00AA9009 /* PINManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		D918764519803A81005205D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D918762F19803A81005205D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D918763719803A81005205D1;
+			remoteInfo = AuthenticationManager;
+		};
+		D94330B2199028B50021C69C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D918762F19803A81005205D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D918763719803A81005205D1;
+			remoteInfo = AuthenticationManager;
+		};
+		D94330B4199028B50021C69C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D918762F19803A81005205D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D918763719803A81005205D1;
+			remoteInfo = AuthenticationManager;
+		};
+		D94330B6199028C10021C69C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D918762F19803A81005205D1 /* Project object */;
 			proxyType = 1;
@@ -46,7 +69,6 @@
 		D918763D19803A81005205D1 /* AuthenticationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationManager.h; sourceTree = "<group>"; };
 		D918764319803A81005205D1 /* AuthenticationManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918764919803A81005205D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D918764A19803A81005205D1 /* AuthenticationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManagerTests.swift; sourceTree = "<group>"; };
 		D9187658198042F3005205D1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		D918765C198043E2005205D1 /* PINAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINAuthenticationViewController.swift; sourceTree = "<group>"; };
 		D918766119804BE9005205D1 /* PINViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +78,7 @@
 		D918766A19805FB3005205D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D92FED1A198D4A28007D8CD3 /* PINUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINUpdateViewController.swift; sourceTree = "<group>"; };
 		D92FED1C198D4F71007D8CD3 /* PINUpdateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINUpdateDelegate.swift; sourceTree = "<group>"; };
+		D94330B919902A600021C69C /* AuthenticationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManagerTests.swift; sourceTree = "<group>"; };
 		D96F322E1983039200372846 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D99E2B0E1985941C00F8D1AA /* PINSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINSetupViewController.swift; sourceTree = "<group>"; };
 		D99E2B101985982200F8D1AA /* PINInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINInputViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +88,8 @@
 		D9A9BA1A1989936A006A943C /* PINViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
 		D9A9BA1C198ADA4D006A943C /* PINAuthenticationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINAuthenticationDelegate.swift; sourceTree = "<group>"; };
 		D9A9BA21198ADC2A006A943C /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
+		D9BAFF5E19915C0000DAEF5C /* PINManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINManagerTests.swift; sourceTree = "<group>"; };
+		D9F97153199155AA00AA9009 /* PINManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +155,8 @@
 		D918764719803A81005205D1 /* AuthenticationManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				D918764A19803A81005205D1 /* AuthenticationManagerTests.swift */,
+				D94330B919902A600021C69C /* AuthenticationManagerTests.swift */,
+				D9BAFF5E19915C0000DAEF5C /* PINManagerTests.swift */,
 				D918764819803A81005205D1 /* Supporting Files */,
 			);
 			path = AuthenticationManagerTests;
@@ -176,6 +202,7 @@
 				D9A12B9A199014C600B72F9C /* JNKeychain.h */,
 				D9A12B9B199014C600B72F9C /* JNKeychain.m */,
 				D918766419805188005205D1 /* AuthenticationManager.swift */,
+				D9F97153199155AA00AA9009 /* PINManager.swift */,
 				D91876681980543B005205D1 /* AuthentictionType.swift */,
 				D918766A19805FB3005205D1 /* Constants.swift */,
 			);
@@ -291,6 +318,9 @@
 			);
 			dependencies = (
 				D918764619803A81005205D1 /* PBXTargetDependency */,
+				D94330B3199028B50021C69C /* PBXTargetDependency */,
+				D94330B5199028B50021C69C /* PBXTargetDependency */,
+				D94330B7199028C10021C69C /* PBXTargetDependency */,
 			);
 			name = AuthenticationManagerTests;
 			productName = AuthenticationManagerTests;
@@ -369,6 +399,7 @@
 				D92FED1B198D4A28007D8CD3 /* PINUpdateViewController.swift in Sources */,
 				D92FED1D198D4F71007D8CD3 /* PINUpdateDelegate.swift in Sources */,
 				D9A9BA1B1989936A006A943C /* PINViewController.swift in Sources */,
+				D9F97154199155AA00AA9009 /* PINManager.swift in Sources */,
 				D918766B19805FB3005205D1 /* Constants.swift in Sources */,
 				D9A12B9D199014C600B72F9C /* JNKeychain.m in Sources */,
 			);
@@ -378,7 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D918764B19803A81005205D1 /* AuthenticationManagerTests.swift in Sources */,
+				D94330BA19902A600021C69C /* AuthenticationManagerTests.swift in Sources */,
+				D9BAFF5F19915C0000DAEF5C /* PINManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +421,21 @@
 			isa = PBXTargetDependency;
 			target = D918763719803A81005205D1 /* AuthenticationManager */;
 			targetProxy = D918764519803A81005205D1 /* PBXContainerItemProxy */;
+		};
+		D94330B3199028B50021C69C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D918763719803A81005205D1 /* AuthenticationManager */;
+			targetProxy = D94330B2199028B50021C69C /* PBXContainerItemProxy */;
+		};
+		D94330B5199028B50021C69C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D918763719803A81005205D1 /* AuthenticationManager */;
+			targetProxy = D94330B4199028B50021C69C /* PBXContainerItemProxy */;
+		};
+		D94330B7199028C10021C69C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D918763719803A81005205D1 /* AuthenticationManager */;
+			targetProxy = D94330B6199028C10021C69C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

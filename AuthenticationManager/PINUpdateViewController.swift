@@ -14,8 +14,12 @@ public class PINUpdateViewController: PINViewController {
     var currentPIN: String!
     public var updateDelegate: PINUpdateDelegate?
 
-    init() {
+    override init() {
         super.init()
+    }
+
+    required public init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
     }
 
     override public func viewDidLoad() {
@@ -40,11 +44,11 @@ public class PINUpdateViewController: PINViewController {
             }
         } else {
             // Correct current PIN has already been input
-            if self.newPIN {
+            if self.newPIN != nil {
                 // New PIN has already been entered once, check the two match
                 if self.newPIN == inputPIN {
                     // Verified PIN was the same as the first new PIN, update the value
-                    JNKeychain.saveValue(inputPIN, forKey: kAMPINKey)
+                    PINManager.sharedInstance.PIN = inputPIN
                     // and alert the delgate
                     self.updateDelegate?.PINWasUpdated(inputPIN)
                 } else {

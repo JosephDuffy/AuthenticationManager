@@ -29,14 +29,17 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - PINTextBox Methods
 
-    public func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
-        let oldLength = self.inputTextField.text.utf16Count
-        let replacementLength = string.utf16Count
-        let rangeLength = range.length
-        let newLength = oldLength - rangeLength + replacementLength
-//        let returnKeyUsed = string.bridgeToObjectiveC().containsString("\n")
-        let returnKeyUsed = false
-        return newLength <= 4 || returnKeyUsed
+    func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
+        // Check that the input text is valid
+        if PINManager.sharedInstance.PINIsValid(string) {
+            let oldLength = self.inputTextField.text.utf16Count
+            let replacementLength = string.utf16Count
+            let rangeLength = range.length
+            let newLength = oldLength - rangeLength + replacementLength
+            return newLength <= 4
+        } else {
+            return false
+        }
     }
 
     func inputTextFieldEditingChanged(sender: UITextField) {
@@ -66,7 +69,7 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    public func inputPINWasInvalid() {
+    func inputPINWasInvalid() {
         // Clear the input, allowing the user to type during the animation
         self.inputTextField.text = ""
         // Set that an animation is happening

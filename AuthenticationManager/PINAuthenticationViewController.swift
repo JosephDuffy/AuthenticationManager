@@ -17,7 +17,7 @@ public class PINAuthenticationViewController: PINViewController, PINViewControll
         super.viewDidLoad()
         if self.PIN == nil {
             // PIN has not been explictly set, try to load it from the keychain
-            self.PIN = JNKeychain.loadValueForKey(kAMPINKey) as? String
+            self.PIN = PINManager.sharedInstance.PIN
         }
         assert(self.PIN != nil, "Cannot load the PIN authentication view controller when no PIN has been set")
         self.viewController.delegate = self
@@ -26,7 +26,7 @@ public class PINAuthenticationViewController: PINViewController, PINViewControll
     }
 
     public func PINWasInput(inputPIN: String) {
-        if !self.PIN {
+        if self.PIN == nil {
             // PIN is not set, alert the delegate that a PIN has been input
             self.authenticationDelegate?.PINWasInput?(inputPIN)
         } else {

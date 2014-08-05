@@ -12,11 +12,13 @@ The implementation of Authentication Manager is relatively simple. If you wish t
 
 `let manager = AuthenticationManager.sharedInstance`
 
-By default, Authentication Manager uses standard user defaults to store the value of the PIN that the user inputs. The instance of `NSUserDefaults` can be set on the `AuthenticationManager` instance via the `userDefaults` property. By default, during the setup setup, the user's input PIN is stored in the instance of an `NSUserDefaults` object in a key, as defined in the `kAMPINKey` constant. The `kAMPINKey` should **always** be used when retrieving the PIN the user has chosen.
+Authentication Manager uses the built-in iOS keychain to store the value of the PIN that the user inputs. Although the value can be set, retrieved and deleted manually using the keychain, it is a requirement that when performing alterations to value of the PIN the `PINManager` class is used and the `JNKeychain` class (or another class interacting directly with the keychain) is **not** used. This is due to the value caching that the `PINManager` uses to speed up the reading of the PIN value.
+
+There are no restrictions on the length of the PIN, other than it cannot have a length of 0 (i.e. an empty string). It does, however, have to be made up of valid numerical characters. These valid numerical characters are taken from the built-in character set `NSCharacterSet.decimalDigitCharacterSet()`, which includes non-roman numerical characters, such as `٣`, which is the Arabic number for `3`. When using the supplied views and view controllers, the input PIN must be exactly 4 characters.
 
 ### Setting the PIN
 
-The `PINSetupViewController` presents the user with a view that guides the user through setting their PIN. It saves the PIN to the instance of `NSUserDefaults` set on the `AuthenticationManager` object when the setup has compete, and calls the `setupCompleteWithPIN(inputPIN: String)` method on the `setupDelegate`. Below is some example code to load and use this class.
+The `PINSetupViewController` presents the user with a view that guides the user through setting their PIN. It saves the PIN to the shared instance of `PINManager` when the setup has compete, and calls the `setupCompleteWithPIN(inputPIN: String)` method on the `setupDelegate`. Below is some example code to load and use this class.
 
 ```swift
 let viewController = self.manager.getAuthenticationSetupViewControllerForType(.PIN) as PINSetupViewController
@@ -35,6 +37,12 @@ func setupCompleteWithPIN(PIN: String) {
     // Perform any further tasks
 }
 ```
+
+You can also manually set the PIN using the shared instance of the `PINManager` class, e.g.:
+
+`PINManager.sharedInstance.PIN = "1234"`
+
+This is useful when migrating from an old implementation and keeping the user's PIN
 
 ### Authenticating Using The PIN
 
@@ -76,15 +84,18 @@ func PINWasUpdated(newPIN: String) {
 }
 ```
 
+As with setting the PIN, you can do this manually:
+
+`PINManager.sharedInstance.PIN = "6789"`
+
 ### Resetting the PIN
 
-Resetting the PIN is a simple task: remove the value of the PIN in the user defaults. This can be done by calling `AuthenticationManager.sharedInstance.userDefaults.removeObjectForKey(kAMPINKey)`
+Resetting the PIN is a simple task: set the value of the PIN to `nil`. This can be done by calling `PINManager.sharedInstance.PIN = nil`
 
 ## Upcoming
 
 There are various features that will hopefully be coming to Authentication Manager, some of which include:
 
-* More secure storing of the user's PINs
 * Support for more authentication methods, including biometrics
 * Localisation of the user-facing aspects of the application
 
@@ -92,7 +103,7 @@ There are various features that will hopefully be coming to Authentication Manag
 
 Although no one is required to (obviously), if you feel so inclined, you could help out in any of the following ways:
 
-* Use the framework in your own application, or point other people the frameworks way
+* Use the framework in your own application, or point other people the framework's way
 * Let me know if you do use it
 * Post any issues you find
 * Create a pull request if you make any improvements or additions
