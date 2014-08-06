@@ -1,14 +1,23 @@
 AuthenticationManager
 ===
+[![Version](https://img.shields.io/cocoapods/v/AuthenticationManager.svg?style=flat)](http://cocoadocs.org/docsets/AuthenticationManager)
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/cocoapods/p/AuthenticationManager.svg?style=flat)](http://cocoadocs.org/docsets/AuthenticationManager)
 
 Authentication Manager is an iOS framework, written in Swift, aimed to aid in-app authentication.
 
 Authentication Manager currently supports a single authentication type: PIN. PIN is exactly what it says on the tin: a Personal Identification Number, which in this instance is a 4 digit long numerical code.
 
-##Implementation
+##Installation
 
-The implementation of Authentication Manager is relatively simple. If you wish to see an example of the framework implemented in an iOS app, visit the [Authentication Manager Examples GitHub Repo](https://github.com/YetiiNet/AuthenticationManagerExamples). After adding the AuthenticationManager framework in your project, the first step is get the shared instance of the `AuthenticationManager` by getting the `sharedInstance` class property of the `AuthenticationManager` class:
+AuthenticationManager is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+`pod "AuthenticationManager"`
+
+###Implementation
+
+Once you've included the framework, the implementation is relatively simple. If you wish to see an example of the framework implemented in an iOS app, visit the [Authentication Manager Examples GitHub Repo](https://github.com/YetiiNet/AuthenticationManagerExamples). After adding the AuthenticationManager framework in your project, the first step is get the shared instance of the `AuthenticationManager` by getting the `sharedInstance` class property of the `AuthenticationManager` class:
 
 `let manager = AuthenticationManager.sharedInstance`
 
