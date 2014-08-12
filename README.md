@@ -10,10 +10,11 @@ Authentication Manager currently supports a single authentication type: PIN. PIN
 
 ##Installation
 
-AuthenticationManager is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+AuthenticationManager is **not** available through [CocoaPods](http://cocoapods.org), but will hopefully be available in the future. For now, to install Authentication Manager framework, simply add it as a git submodule:
 
-`pod "AuthenticationManager"`
+`git submodule add https://github.com/YetiiNet/AuthenticationManager.git AuthenticationManagerFramework`
+
+Once the submodule has been added, drag the `AuthenticationManager.xcodeproj` file in the`AuthenticationManagerFramework` directory in to your workspace (or project) and add the `AuthenticationManager.framework` framework to your target.
 
 ###Implementation
 
