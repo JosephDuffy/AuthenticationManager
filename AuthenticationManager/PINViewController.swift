@@ -12,18 +12,14 @@ import UIKit
 public class PINViewController: AuthenticationViewController, PINViewControllerDelegate {
     var viewController: PINInputViewController!
 
-    public required init() {
-        super.init(authenticationType: .PIN)
+    convenience init() {
+        self.init(authenticationType: .PIN)
+    }
+
+    public override func viewDidLoad() {
+        super.viewDidLoad()
 
         self.viewController = self.addNewInputViewController()
-    }
-
-    public required init(authenticationType: AuthenticationType) {
-        fatalError("init(authenticationType:) has not been implemented")
-    }
-
-    required public init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     private func addNewInputViewController() -> PINInputViewController {
