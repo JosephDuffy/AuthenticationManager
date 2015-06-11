@@ -17,7 +17,7 @@ public class AuthenticationManager {
     }
 
     lazy var bundle: NSBundle = {
-        return NSBundle(identifier: "net.yetii.AuthenticationManager")
+        return NSBundle(identifier: "net.yetii.AuthenticationManager")!
     }()
 
     var storyboard: UIStoryboard {
@@ -28,12 +28,10 @@ public class AuthenticationManager {
 
     /// Create and return a subclass of AuthenticationViewController used to perform the initial setup of the provided authentication type
     public func getAuthenticationSetupViewControllerForType(authenticationType: AuthenticationType) -> AuthenticationViewController {
-        var viewController: AuthenticationViewController
         switch authenticationType {
         case .PIN:
-            viewController = PINSetupViewController()
+            return PINSetupViewController()
         }
-        return viewController
     }
 
     /// Create and return a subclass of AuthenticationViewController used to modify the stored value of the provided authentication type

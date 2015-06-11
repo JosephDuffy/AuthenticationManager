@@ -12,22 +12,22 @@ import UIKit
 public class PINViewController: AuthenticationViewController, PINViewControllerDelegate {
     var viewController: PINInputViewController!
 
-    override init() {
-        super.init()
+    public required init() {
+        super.init(authenticationType: .PIN)
+
+        self.viewController = self.addNewInputViewController()
     }
 
-    required public init(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
+    public required init(authenticationType: AuthenticationType) {
+        fatalError("init(authenticationType:) has not been implemented")
     }
 
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        self._authenticationType = .PIN
-        self.viewController = addNewInputViewController()
+    required public init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     private func addNewInputViewController() -> PINInputViewController {
-        let newInputViewController = self.manager.storyboard.instantiateViewControllerWithIdentifier("PINAuthentication") as PINInputViewController
+        let newInputViewController = AuthenticationManager.sharedInstance.storyboard.instantiateViewControllerWithIdentifier("PINAuthentication") as! PINInputViewController
         newInputViewController.delegate = self
         // Add the view controller as a child of this view controller
         self.addChildViewController(newInputViewController)

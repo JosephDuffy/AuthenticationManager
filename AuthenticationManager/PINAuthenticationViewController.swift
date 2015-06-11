@@ -9,7 +9,7 @@
 import UIKit
 
 /// A view controller used to manage the input of a PIN and check its validity
-public class PINAuthenticationViewController: PINViewController, PINViewControllerDelegate {
+public class PINAuthenticationViewController: PINViewController {
     public var PIN: String?
     public var authenticationDelegate: PINAuthenticationDelegate?
 

@@ -94,9 +94,9 @@ class PINManagerTests: XCTestCase {
         // Ensure the value is pre-cached and has a value
         PINManager.sharedInstance.PIN = "1234"
         self.measureBlock() {
-            for i in 0...2500 {
+            for _ in 0...2500 {
                 // Load the cached value from the manager
-                let cachedValue = PINManager.sharedInstance.PIN
+                _ = PINManager.sharedInstance.PIN
             }
         }
     }
@@ -105,8 +105,8 @@ class PINManagerTests: XCTestCase {
         // Ensure the keychain has a value
         JNKeychain.saveValue("1234", forKey: kAMPINKey)
         self.measureBlock() {
-            for i in 0...2500 {
-                let loadedValue = JNKeychain.loadValueForKey(kAMPINKey) as? String
+            for _ in 0...2500 {
+                _ = JNKeychain.loadValueForKey(kAMPINKey) as? String
             }
         }
     }
@@ -115,9 +115,9 @@ class PINManagerTests: XCTestCase {
         // Ensure the value is pre-cached and has a value
         PINManager.sharedInstance.PIN = nil
         self.measureBlock() {
-            for i in 0...2500 {
+            for _ in 0...2500 {
                 // Load the cached value from the manager
-                let cachedValue = PINManager.sharedInstance.PIN
+                _ = PINManager.sharedInstance.PIN
             }
         }
     }
@@ -126,8 +126,8 @@ class PINManagerTests: XCTestCase {
         // Ensure the keychain has a value
         JNKeychain.deleteValueForKey(kAMPINKey)
         self.measureBlock() {
-            for i in 0...2500 {
-                let loadedValue = JNKeychain.loadValueForKey(kAMPINKey) as? String
+            for _ in 0...2500 {
+                _ = JNKeychain.loadValueForKey(kAMPINKey) as? String
             }
         }
     }

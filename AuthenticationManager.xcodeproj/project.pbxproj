@@ -19,7 +19,6 @@
 		D92FED1B198D4A28007D8CD3 /* PINUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92FED1A198D4A28007D8CD3 /* PINUpdateViewController.swift */; };
 		D92FED1D198D4F71007D8CD3 /* PINUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92FED1C198D4F71007D8CD3 /* PINUpdateDelegate.swift */; };
 		D94330BA19902A600021C69C /* AuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94330B919902A600021C69C /* AuthenticationManagerTests.swift */; };
-		D96F322F1983039200372846 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F322E1983039200372846 /* AudioToolbox.framework */; };
 		D99E2B0F1985941C00F8D1AA /* PINSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B0E1985941C00F8D1AA /* PINSetupViewController.swift */; };
 		D99E2B111985982200F8D1AA /* PINInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B101985982200F8D1AA /* PINInputViewController.swift */; };
 		D99E2B161986F46A00F8D1AA /* PINSetupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2B151986F46A00F8D1AA /* PINSetupDelegate.swift */; };
@@ -79,7 +78,6 @@
 		D92FED1A198D4A28007D8CD3 /* PINUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINUpdateViewController.swift; sourceTree = "<group>"; };
 		D92FED1C198D4F71007D8CD3 /* PINUpdateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINUpdateDelegate.swift; sourceTree = "<group>"; };
 		D94330B919902A600021C69C /* AuthenticationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManagerTests.swift; sourceTree = "<group>"; };
-		D96F322E1983039200372846 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D99E2B0E1985941C00F8D1AA /* PINSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINSetupViewController.swift; sourceTree = "<group>"; };
 		D99E2B101985982200F8D1AA /* PINInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINInputViewController.swift; sourceTree = "<group>"; };
 		D99E2B151986F46A00F8D1AA /* PINSetupDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PINSetupDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96F322F1983039200372846 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +209,6 @@
 		D95CC5031981AD8500CF1CE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D96F322E1983039200372846 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			path = ..;
@@ -333,7 +329,8 @@
 		D918762F19803A81005205D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Yetii Ltd.";
 				TargetAttributes = {
 					D918763719803A81005205D1 = {
@@ -341,7 +338,6 @@
 					};
 					D918764219803A81005205D1 = {
 						CreatedOnToolsVersion = 6.0;
-						TestTargetID = D918763719803A81005205D1;
 					};
 				};
 			};
@@ -461,6 +457,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -475,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -516,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -539,6 +536,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.yetii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AuthenticationManager;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -557,6 +555,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.yetii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AuthenticationManager;
 				SKIP_INSTALL = YES;
 			};
@@ -565,16 +564,14 @@
 		D918765219803A81005205D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AuthenticationManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.yetii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AuthenticationManagerTests;
 			};
 			name = Debug;
@@ -582,12 +579,10 @@
 		D918765319803A81005205D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = AuthenticationManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.yetii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AuthenticationManagerTests;
 			};
 			name = Release;

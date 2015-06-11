@@ -8,8 +8,8 @@
 
 import UIKit
 
-public class PINSetupViewController: PINViewController, PINViewControllerDelegate {
-    var firstPIN: String?
+public class PINSetupViewController: PINViewController {
+    private var firstPIN: String?
     public var setupDelegate: PINSetupDelegate?
 
     override public func viewDidLoad() {

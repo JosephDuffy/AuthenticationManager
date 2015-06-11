@@ -7,20 +7,23 @@
 //
 
 import UIKit
-import AudioToolbox
 
+/**
+A class for containing the method of allowing the user to input a PIN. On its own this class does not do much,
+but rather it is added to another view controller that will do anything it needs to with the user's input
+*/
 class PINInputViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var PINLabel: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var hintLabel: UILabel!
-    var delegate: PINViewControllerDelegate?
+    weak var delegate: PINViewControllerDelegate?
     let maxPINLength = 4
-    var animating: Bool = false
+    private var animating = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.translatesAutoresizingMaskIntoConstraints = false
         self.hintLabel.text = ""
         self.inputTextField.delegate = self
         self.inputTextField.addTarget(self, action: "inputTextFieldEditingChanged:", forControlEvents: .EditingChanged)
@@ -29,14 +32,15 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - PINTextBox Methods
 
-    func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         // Check that the input text is valid
         if PINManager.sharedInstance.PINIsValid(string) {
-            let oldLength = self.inputTextField.text.utf16Count
-            let replacementLength = string.utf16Count
+            guard let oldLength = self.inputTextField.text?.utf16.count else { return false }
+
+            let replacementLength = string.utf16.count
             let rangeLength = range.length
             let newLength = oldLength - rangeLength + replacementLength
-            return newLength <= 4
+            return newLength <= self.maxPINLength
         } else {
             return false
         }
@@ -44,16 +48,18 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
 
     func inputTextFieldEditingChanged(sender: UITextField) {
         assert(sender == self.inputTextField, "Only the PIN Text Box should call the PINTextFieldEditingChanged: method")
-        let inputCodeLength = self.inputTextField.text.utf16Count
+
+        guard let inputTextFieldText = self.inputTextField.text else { return }
+        let inputCodeLength = inputTextFieldText.utf16.count
         self.updatePINLabel()
         if inputCodeLength == maxPINLength {
-            self.delegate?.PINWasInput?(self.inputTextField.text)
+            self.delegate?.PINWasInput?(inputTextFieldText)
         }
     }
 
     func updatePINLabel() {
         if !self.animating {
-            let inputCodeLength = self.inputTextField.text.utf16Count
+            guard let inputCodeLength = self.inputTextField.text?.utf16.count else { return }
             var passwordLabelText = "";
             for i in 1...maxPINLength {
                 if i <= inputCodeLength {
@@ -79,7 +85,7 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
         let translateLeft: CGAffineTransform = CGAffineTransformTranslate(CGAffineTransformIdentity, -xMovement, 0.0);
         let translateRight: CGAffineTransform = CGAffineTransformTranslate(CGAffineTransformIdentity, xMovement, 0.0);
         self.PINLabel.transform = translateLeft;
-        UIView.animateWithDuration(0.07, delay: 0.0, options: .Autoreverse | .Repeat, animations: {() -> Void in
+        UIView.animateWithDuration(0.07, delay: 0.0, options: [.Autoreverse, .Repeat], animations: {() -> Void in
             UIView.setAnimationRepeatCount(2.0)
             self.PINLabel.transform = translateRight
             }, completion:{ (finished: Bool) -> Void in
@@ -95,8 +101,6 @@ class PINInputViewController: UIViewController, UITextFieldDelegate {
                             }
                         })
                 }
-            });
-        // Vibrate the device
-//        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            })
     }
 }

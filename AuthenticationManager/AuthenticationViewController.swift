@@ -10,27 +10,17 @@ import UIKit
 
 public class AuthenticationViewController: UIViewController {
     public var delegate: AuthenticationDelegate?
-    lazy var manager: AuthenticationManager = {
-    return AuthenticationManager.sharedInstance
-    }()
-    internal var _authenticationType: AuthenticationType!
-    var authenticationType: AuthenticationType {
-    get {
-        return self._authenticationType
-    }
-    }
 
-    required public init(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
-    }
+    public let authenticationType: AuthenticationType
 
-    public override init() {
+    public required init(authenticationType: AuthenticationType) {
+        self.authenticationType = authenticationType
+
         super.init(nibName: nil, bundle: nil)
-        var manager = AuthenticationManager.sharedInstance
     }
 
-    override public func viewDidLoad() {
-        super.viewDidLoad()
+    required public init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     public func viewInNavigationController() -> UINavigationController {

@@ -14,16 +14,9 @@ public class PINUpdateViewController: PINViewController {
     var currentPIN: String!
     public var updateDelegate: PINUpdateDelegate?
 
-    override init() {
-        super.init()
-    }
-
-    required public init(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
-    }
-
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
         self.currentPIN = JNKeychain.loadValueForKey(kAMPINKey) as? String
         assert(self.currentPIN != nil, "Cannot load the PIN update view controller when no PIN has been set")
         self.viewController.delegate = self
